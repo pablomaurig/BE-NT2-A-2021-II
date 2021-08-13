@@ -12,6 +12,7 @@ Para iniciar el proyecto vamos crearnos una cuenta en github. A continuacion la 
 ## Listado de participantes:
 
 - Daniel Guzman, dguzman-ort
+- Jerónimo Sánchez Peruga, jsanchezperuga
 - Noelia Garro, Noelia-Garro
 - Tom Maenhout, timaenho
 - Pablo Maurig, pablomaurig
