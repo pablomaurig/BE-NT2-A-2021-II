@@ -14,17 +14,13 @@ const classNames = {
   let totalTareasPendientes = 0
 
   function eliminarElemento(){
-    // console.log('eliminar este elemento', this.parentElement)
     const parent = this.parentElement
-    console.log('Eliminando este elemento: ', parent)
     parent.remove()
 
     totalTareas--
-    //TODO: buscar la forma de ver si el checkbox esta tildado o no. 
-    // Si NO esta tildado hay que decrementar
-    // totalTareasPendientes
-
-
+    if(!parent.querySelector('.todo-checkbox').checked){
+      totalTareasPendientes--
+    }
 
     renderizarContadores()
   }
@@ -44,11 +40,14 @@ const classNames = {
     button.innerHTML = ' X '
     button.onclick = eliminarElemento
 
+    const label = document.createElement('label')
+
     const li = document.createElement('li')
     li.className = classNames.TODO_ITEM
     
-    li.appendChild(checkbox)
-    li.appendChild(span)
+    li.appendChild(label)
+    label.appendChild(checkbox)
+    label.appendChild(span)
     li.appendChild(button)
 
     console.log(li)
@@ -66,7 +65,6 @@ const classNames = {
     const nombre = prompt()
     if (nombre){
       const tarea = createTODO(nombre)
-      // debugger
       list.appendChild(tarea)
       totalTareas ++
       totalTareasPendientes ++
